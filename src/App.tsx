@@ -11,6 +11,7 @@ import Events from "./pages/Events";
 import Training from "./pages/Training";
 import Store from "./pages/Store";
 import ProductDetails from "./pages/ProductDetails";
+import Services from "./pages/Services";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/news/blogs" element={<Blogs />} />
           <Route path="/news/events" element={<Events />} />
           <Route path="/news/training" element={<Training />} />
