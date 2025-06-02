@@ -2,22 +2,33 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Sprout, Phone } from 'lucide-react';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from '@/components/ui/navigation-menu';
+import { Menu, Sprout, Phone, ChevronDown } from 'lucide-react';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navigation = [
-    { name: 'Home', href: '#' },
-    { name: 'About', href: '#' },
-    { name: 'Services', href: '#' },
-    { name: 'Gallery', href: '#' },
-    { name: 'News/Blog', href: '#' },
-    { name: 'Store', href: '#' },
-    { name: 'Training', href: '#' },
-    { name: 'Events', href: '#' },
-    { name: 'Certificates', href: '#' },
-    { name: 'Contact', href: '#' }
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Gallery', href: '/gallery' },
+    { name: 'Store', href: '/store' },
+    { name: 'Certificates', href: '/certificates' },
+    { name: 'Contact', href: '/contact' }
+  ];
+
+  const newsSubMenu = [
+    { name: 'Blogs', href: '/news/blogs' },
+    { name: 'Events', href: '/news/events' },
+    { name: 'Training', href: '/news/training' }
   ];
 
   return (
@@ -46,6 +57,31 @@ const Header = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span>
               </a>
             ))}
+            
+            {/* News Dropdown */}
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-green-600 font-medium bg-transparent hover:bg-transparent focus:bg-transparent data-[active]:bg-transparent data-[state=open]:bg-transparent">
+                    News
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="w-48 p-2">
+                      {newsSubMenu.map((item) => (
+                        <NavigationMenuLink key={item.name} asChild>
+                          <a
+                            href={item.href}
+                            className="block px-3 py-2 text-sm text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-md transition-colors"
+                          >
+                            {item.name}
+                          </a>
+                        </NavigationMenuLink>
+                      ))}
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
           </nav>
 
           {/* Contact Button */}
@@ -75,6 +111,22 @@ const Header = () => {
                     {item.name}
                   </a>
                 ))}
+                
+                {/* News submenu for mobile */}
+                <div className="border-b border-gray-100">
+                  <div className="text-gray-700 font-medium py-2">News</div>
+                  {newsSubMenu.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="block text-gray-600 hover:text-green-600 py-1 pl-4 text-sm"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+                
                 <Button className="mt-6 bg-green-600 hover:bg-green-700 text-white">
                   <Phone className="h-4 w-4 mr-2" />
                   Contact Us
@@ -84,7 +136,7 @@ const Header = () => {
           </Sheet>
         </div>
       </div>
-    </header>
+    </SheetContent>
   );
 };
 
