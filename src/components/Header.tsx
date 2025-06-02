@@ -24,16 +24,15 @@ const Header = () => {
     <header className="bg-white shadow-sm border-b border-green-100 sticky top-0 z-50">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
+          {/* Logo - Clickable */}
+          <a href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
             <div className="bg-green-600 p-2 rounded-lg">
               <Sprout className="h-6 w-6 text-white" />
             </div>
             <div>
               <h1 className="font-bold text-lg text-green-800">MFPCL</h1>
-              <p className="text-xs text-gray-600 hidden sm:block">Manbhum Farmers Producer Company</p>
             </div>
-          </div>
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
@@ -60,7 +59,7 @@ const Header = () => {
           {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="lg:hidden">
-              <Button variant="ghost" size="sm">
+              <Button variant="ghost" size="sm" className="text-gray-700 hover:text-green-600">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
@@ -76,7 +75,7 @@ const Header = () => {
                     {item.name}
                   </a>
                 ))}
-                <Button className="mt-6 bg-green-600 hover:bg-green-700">
+                <Button className="mt-6 bg-green-600 hover:bg-green-700 text-white">
                   <Phone className="h-4 w-4 mr-2" />
                   Contact Us
                 </Button>
