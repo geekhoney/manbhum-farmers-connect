@@ -136,7 +136,7 @@ const Header = () => {
           </Sheet>
         </div>
       </div>
-    </SheetContent>
+    </header>
   );
 };
 
