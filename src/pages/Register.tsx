@@ -117,10 +117,10 @@ const Register = () => {
                       <SelectValue placeholder="Select farmer type" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="small">Small Farmer (< 2 acres)</SelectItem>
+                      <SelectItem value="small">Small Farmer (&lt; 2 acres)</SelectItem>
                       <SelectItem value="marginal">Marginal Farmer (2-5 acres)</SelectItem>
                       <SelectItem value="medium">Medium Farmer (5-10 acres)</SelectItem>
-                      <SelectItem value="large">Large Farmer (> 10 acres)</SelectItem>
+                      <SelectItem value="large">Large Farmer (&gt; 10 acres)</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
