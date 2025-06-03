@@ -1,11 +1,8 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Users, TrendingUp, Shield } from 'lucide-react';
-
 const HeroSection = () => {
-  return (
-    <section className="relative py-20 lg:py-28 bg-gradient-to-br from-green-600 via-green-700 to-green-800 text-white overflow-hidden">
+  return <section className="relative py-20 lg:py-28 bg-gradient-to-br from-green-600 via-green-700 to-green-800 text-white overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
@@ -30,7 +27,7 @@ const HeroSection = () => {
                 Become a Member
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-600">
+              <Button size="lg" variant="outline" className="border-white text-white hover:text-green-600 bg-green-500 hover:bg-green-400 font-thin text-base">
                 Learn More
               </Button>
             </div>
@@ -92,8 +89,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
