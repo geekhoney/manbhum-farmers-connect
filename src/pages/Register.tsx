@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -42,7 +41,21 @@ const Register = () => {
     
     console.log('Registration attempt:', formData);
     toast.success('Registration successful! Welcome to MFPCL!');
-    // Add registration logic here
+    
+    // Show notification using global notification system
+    if ((window as any).showNotification) {
+      (window as any).showNotification({
+        type: 'success',
+        title: 'Welcome to MFPCL!',
+        message: `Hello ${formData.firstName}! Your account has been created successfully.`,
+        duration: 6000
+      });
+    }
+    
+    // Redirect to profile or login page after successful registration
+    setTimeout(() => {
+      window.location.href = '/profile';
+    }, 1500);
   };
 
   return (
@@ -63,6 +76,7 @@ const Register = () => {
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
+                
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="firstName">First Name</Label>
