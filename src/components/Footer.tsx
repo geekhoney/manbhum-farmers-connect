@@ -1,11 +1,8 @@
-
 import React from 'react';
 import { Sprout, Phone, Mail, MapPin, Facebook, Instagram, Youtube, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
 const Footer = () => {
-  return (
-    <footer className="bg-green-800 text-white">
+  return <footer className="bg-green-800 text-white">
       <div className="container mx-auto px-6 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -77,7 +74,7 @@ const Footer = () => {
                 </Button>
               </div>
               <div className="space-y-2 text-sm">
-                <Button variant="outline" size="sm" className="w-full border-green-600 text-green-200 hover:bg-green-600 hover:text-white">
+                <Button variant="outline" size="sm" className="w-full border-green-600 hover:bg-green-600 text-green-500">
                   <MessageCircle className="h-4 w-4 mr-2" />
                   Join WhatsApp Community
                 </Button>
@@ -102,8 +99,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
