@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -198,9 +198,11 @@ const Training = () => {
                   
                   <div className="flex items-center justify-between">
                     <span className="text-lg font-bold text-green-600">{course.price}</span>
-                    <Button size="sm" className="bg-green-600 hover:bg-green-700">
-                      Enroll Now
-                    </Button>
+                    <Link to={`/news/training/${course.id}`}>
+                      <Button size="sm" className="bg-green-600 hover:bg-green-700">
+                        Enroll Now
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -236,9 +238,11 @@ const Training = () => {
                     </div>
                   </div>
                   
-                  <Button size="sm" className="bg-blue-600 hover:bg-blue-700 w-full">
-                    Register for Free
-                  </Button>
+                  <Link to="/register">
+                    <Button size="sm" className="bg-blue-600 hover:bg-blue-700 w-full">
+                      Register for Free
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}

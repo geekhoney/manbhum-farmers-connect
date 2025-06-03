@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -160,7 +160,6 @@ const Services = () => {
     <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
       <Header />
       
-      {/* Hero Section */}
       <section className="py-16 bg-green-600 text-white">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -218,10 +217,12 @@ const Services = () => {
                           <p className="text-gray-600 mb-4">
                             Contact our team to learn more about this service and how it can benefit your farming operations.
                           </p>
-                          <Button className="bg-green-600 hover:bg-green-700">
-                            <Phone className="h-4 w-4 mr-2" />
-                            Contact Us
-                          </Button>
+                          <Link to="/contact">
+                            <Button className="bg-green-600 hover:bg-green-700">
+                              <Phone className="h-4 w-4 mr-2" />
+                              Contact Us
+                            </Button>
+                          </Link>
                         </div>
                       </div>
                     </CardContent>
@@ -311,9 +312,11 @@ const Services = () => {
                       <span className="text-sm">Next batch: {course.nextDate}</span>
                     </div>
                   </div>
-                  <Button className="w-full mt-4 bg-green-600 hover:bg-green-700">
-                    Enroll Now
-                  </Button>
+                  <Link to="/register">
+                    <Button className="w-full mt-4 bg-green-600 hover:bg-green-700">
+                      Enroll Now
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -353,9 +356,11 @@ const Services = () => {
                       <span>{event.location}</span>
                     </div>
                   </div>
-                  <Button variant="outline" className="w-full mt-4 border-green-600 text-green-600 hover:bg-green-600 hover:text-white">
-                    Register Now
-                  </Button>
+                  <Link to="/register">
+                    <Button variant="outline" className="w-full mt-4 border-green-600 text-green-600 hover:bg-green-600 hover:text-white">
+                      Register Now
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}

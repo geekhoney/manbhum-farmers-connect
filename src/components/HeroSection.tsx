@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Users, TrendingUp, Shield } from 'lucide-react';
+
 const HeroSection = () => {
   return <section className="relative py-20 lg:py-28 bg-gradient-to-br from-green-600 via-green-700 to-green-800 text-white overflow-hidden">
       {/* Background Pattern */}
@@ -23,14 +25,19 @@ const HeroSection = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="secondary" className="bg-white text-green-600 hover:bg-green-50">
-                Become a Member
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button size="lg" variant="outline" className="border-white border-green-600 text-green-500 hover:bg-green-600 hover:text-white ">
-                Learn More
-              </Button>
+              <Link to="/register">
+                <Button size="lg" variant="secondary" className="bg-white text-green-600 hover:bg-green-50">
+                  Become a Member
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link to="/about">
+                <Button size="lg" variant="outline" className="border-white border-green-600 text-green-500 hover:bg-green-600 hover:text-white ">
+                  Learn More
+                </Button>
+              </Link>
             </div>
+            
             
             <div className="grid grid-cols-3 gap-6 pt-8">
               <div className="text-center">
@@ -50,6 +57,7 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
+          
           
           <div className="relative lg:block">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
@@ -91,4 +99,5 @@ const HeroSection = () => {
       </div>
     </section>;
 };
+
 export default HeroSection;
