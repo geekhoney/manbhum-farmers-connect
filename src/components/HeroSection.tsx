@@ -27,7 +27,7 @@ const HeroSection = () => {
                 Become a Member
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:text-green-600 bg-green-500 hover:bg-green-400 font-thin text-base">
+              <Button size="lg" variant="outline" className="border-white border-green-600 text-green-500 hover:bg-green-600 hover:text-white text-base">
                 Learn More
               </Button>
             </div>
