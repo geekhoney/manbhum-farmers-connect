@@ -63,13 +63,13 @@ const Footer = () => {
             <h4 className="font-semibold text-lg mb-4">Connect With Us</h4>
             <div className="space-y-3">
               <div className="flex space-x-3">
-                <Button size="sm" variant="outline" className="border-green-600 text-green-200 hover:bg-green-600 hover:text-white">
+                <Button size="sm" variant="outline" className="border-green-600 text-green-500 hover:bg-green-600 hover:text-white">
                   <Facebook className="h-4 w-4" />
                 </Button>
-                <Button size="sm" variant="outline" className="border-green-600 text-green-200 hover:bg-green-600 hover:text-white">
+                <Button size="sm" variant="outline" className="border-green-600 text-green-500 hover:bg-green-600 hover:text-white">
                   <Instagram className="h-4 w-4" />
                 </Button>
-                <Button size="sm" variant="outline" className="border-green-600 text-green-200 hover:bg-green-600 hover:text-white">
+                <Button size="sm" variant="outline" className="border-green-600 text-green-500 hover:bg-green-600 hover:text-white">
                   <Youtube className="h-4 w-4" />
                 </Button>
               </div>
