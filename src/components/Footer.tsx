@@ -28,12 +28,14 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-green-200 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="text-green-200 hover:text-white transition-colors">Our Services</a></li>
-              <li><a href="#" className="text-green-200 hover:text-white transition-colors">Training Programs</a></li>
-              <li><a href="#" className="text-green-200 hover:text-white transition-colors">Events & Webinars</a></li>
-              <li><a href="#" className="text-green-200 hover:text-white transition-colors">Certificates</a></li>
-              <li><a href="#" className="text-green-200 hover:text-white transition-colors">News & Blog</a></li>
+              <li><a href="/about" className="text-green-200 hover:text-white transition-colors">About Us</a></li>
+              <li><a href="/services" className="text-green-200 hover:text-white transition-colors">Our Services</a></li>
+              <li><a href="/news/training" className="text-green-200 hover:text-white transition-colors">Training Programs</a></li>
+              <li><a href="/news/events" className="text-green-200 hover:text-white transition-colors">Events & Webinars</a></li>
+              <li><a href="/certificates" className="text-green-200 hover:text-white transition-colors">Certificates</a></li>
+              <li><a href="/news/blogs" className="text-green-200 hover:text-white transition-colors">News & Blog</a></li>
+              <li><a href="/store" className="text-green-200 hover:text-white transition-colors">Store</a></li>
+              <li><a href="/gallery" className="text-green-200 hover:text-white transition-colors">Gallery</a></li>
             </ul>
           </div>
 
