@@ -89,7 +89,7 @@ const Footer = () => {
         <div className="border-t border-green-700 mt-8 pt-8 text-center">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-green-200 text-sm">
-              © 2024 Manbhum Farmers Producer Company Limited. All rights reserved.
+              © 2025 Manbhum Farmers Producer Company Limited. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-green-200 hover:text-white transition-colors">Privacy Policy</a>

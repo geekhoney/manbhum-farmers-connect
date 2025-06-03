@@ -63,7 +63,7 @@ const EventDetails = () => {
         <li>Follow-up support for 3 months</li>
       </ul>
     `,
-    date: "2024-06-15",
+    date: "2025-06-15",
     time: "10:00 AM - 4:00 PM",
     location: "MFPCL Training Center, Purulia",
     type: "Workshop",

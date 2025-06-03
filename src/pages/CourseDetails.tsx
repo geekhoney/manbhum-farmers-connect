@@ -39,7 +39,7 @@ const CourseDetails = () => {
     lessons: 24,
     certificate: true,
     image: "/placeholder.svg",
-    nextBatch: "January 20, 2025",
+    nextBatch: "June 20, 2025",
     language: "Hindi & English",
     features: [
       "24 video lessons",
