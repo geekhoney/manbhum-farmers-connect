@@ -74,7 +74,7 @@ const Footer = () => {
                 </Button>
               </div>
               <div className="space-y-2 text-sm">
-                <Button variant="outline" size="sm" className="w-full border-green-600 hover:bg-green-600 text-green-500">
+                <Button variant="outline" size="sm" className="w-full border-green-600 hover:bg-green-600 text-green-500 hover:text-white">
                   <MessageCircle className="h-4 w-4 mr-2" />
                   Join WhatsApp Community
                 </Button>
