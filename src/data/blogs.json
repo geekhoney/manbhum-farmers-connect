@@ -10,7 +10,9 @@
     "readTime": "5 min read",
     "views": 245,
     "image": "/placeholder.svg",
-    "content": "<h2>Introduction to Sustainable Farming</h2><p>Sustainable farming practices are essential for maintaining soil health while maximizing crop yields...</p>"
+    "tags": ["organic farming", "sustainability", "crop yield"],
+    "content": "<h2>Introduction to Sustainable Farming</h2><p>Sustainable farming practices are essential for maintaining soil health while maximizing crop yields...</p>",
+    "featured": true
   },
   {
     "id": 2,
@@ -22,7 +24,9 @@
     "readTime": "8 min read",
     "views": 189,
     "image": "/placeholder.svg",
-    "content": "<h2>Market Overview</h2><p>The agricultural commodity market is experiencing significant changes...</p>"
+    "tags": ["market trends", "commodity prices", "forecasting"],
+    "content": "<h2>Market Overview</h2><p>The agricultural commodity market is experiencing significant changes...</p>",
+    "featured": false
   },
   {
     "id": 3,
@@ -34,6 +38,22 @@
     "readTime": "6 min read",
     "views": 312,
     "image": "/placeholder.svg",
-    "content": "<h2>Our Success Story</h2><p>Through collective farming initiatives, our members have achieved remarkable results...</p>"
+    "tags": ["success story", "collective farming", "income increase"],
+    "content": "<h2>Our Success Story</h2><p>Through collective farming initiatives, our members have achieved remarkable results...</p>",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "title": "Digital Agriculture: Technology for Modern Farmers",
+    "excerpt": "Explore how digital tools and precision agriculture can revolutionize farming practices and boost productivity.",
+    "author": "Tech Team",
+    "date": "2024-05-20",
+    "category": "Technology",
+    "readTime": "7 min read",
+    "views": 156,
+    "image": "/placeholder.svg",
+    "tags": ["digital agriculture", "technology", "precision farming"],
+    "content": "<h2>Digital Revolution in Agriculture</h2><p>Technology is transforming the way we farm...</p>",
+    "featured": false
   }
 ]

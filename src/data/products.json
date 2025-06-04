@@ -10,7 +10,11 @@
     "category": "Vegetables",
     "description": "Fresh organic tomatoes grown without chemical pesticides",
     "inStock": true,
-    "unit": "kg"
+    "unit": "kg",
+    "farmer": "Ramesh Mahato",
+    "location": "Purulia",
+    "harvestDate": "2024-05-25",
+    "certification": "Organic Certified"
   },
   {
     "id": 2,
@@ -22,7 +26,11 @@
     "category": "Leafy Greens",
     "description": "Nutrient-rich spinach leaves, freshly harvested",
     "inStock": true,
-    "unit": "bunch"
+    "unit": "bunch",
+    "farmer": "Sunita Devi",
+    "location": "Bankura",
+    "harvestDate": "2024-05-27",
+    "certification": "Pesticide Free"
   },
   {
     "id": 3,
@@ -34,7 +42,11 @@
     "category": "Grains",
     "description": "Premium quality organic basmati rice",
     "inStock": true,
-    "unit": "25kg bag"
+    "unit": "25kg bag",
+    "farmer": "Collective",
+    "location": "Multiple farms",
+    "harvestDate": "2024-04-15",
+    "certification": "Organic Certified"
   },
   {
     "id": 4,
@@ -46,6 +58,26 @@
     "category": "Fertilizers",
     "description": "High-quality vermicompost for organic farming",
     "inStock": true,
-    "unit": "50kg bag"
+    "unit": "50kg bag",
+    "farmer": "MFPCL Production Unit",
+    "location": "Purulia",
+    "harvestDate": "2024-05-20",
+    "certification": "Quality Tested"
+  },
+  {
+    "id": 5,
+    "name": "Mustard Oil",
+    "price": 180,
+    "originalPrice": 200,
+    "image": "/placeholder.svg",
+    "rating": 4.7,
+    "category": "Oils",
+    "description": "Pure cold-pressed mustard oil",
+    "inStock": true,
+    "unit": "1 liter",
+    "farmer": "Oil Processing Unit",
+    "location": "Purulia",
+    "harvestDate": "2024-05-10",
+    "certification": "Pure & Natural"
   }
 ]

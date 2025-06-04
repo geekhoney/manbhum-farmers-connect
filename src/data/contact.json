@@ -1,0 +1,55 @@
+
+{
+  "headquarters": {
+    "name": "MFPCL Head Office",
+    "address": "Village Kusumtala, Purulia, West Bengal 723101",
+    "phone": "+91-9876543210",
+    "email": "info@mfpcl.com",
+    "hours": "Monday - Saturday: 9:00 AM - 6:00 PM"
+  },
+  "branches": [
+    {
+      "id": 1,
+      "name": "Bankura Branch",
+      "address": "Main Market, Bankura, West Bengal 722101",
+      "phone": "+91-9876543211",
+      "email": "bankura@mfpcl.com",
+      "manager": "Suresh Das"
+    },
+    {
+      "id": 2,
+      "name": "Purulia Training Center",
+      "address": "Agricultural Complex, Purulia, West Bengal 723101",
+      "phone": "+91-9876543212",
+      "email": "training@mfpcl.com",
+      "manager": "Dr. Anita Singh"
+    }
+  ],
+  "departments": [
+    {
+      "name": "Member Services",
+      "email": "members@mfpcl.com",
+      "phone": "+91-9876543213"
+    },
+    {
+      "name": "Training & Development",
+      "email": "training@mfpcl.com",
+      "phone": "+91-9876543214"
+    },
+    {
+      "name": "Marketing Support",
+      "email": "marketing@mfpcl.com",
+      "phone": "+91-9876543215"
+    },
+    {
+      "name": "Technical Support",
+      "email": "support@mfpcl.com",
+      "phone": "+91-9876543216"
+    }
+  ],
+  "emergencyContact": {
+    "phone": "+91-9876543200",
+    "email": "emergency@mfpcl.com",
+    "available": "24/7"
+  }
+}

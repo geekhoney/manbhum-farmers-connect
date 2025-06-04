@@ -5,8 +5,11 @@
     "title": "Collective Procurement",
     "description": "Bulk purchasing of seeds, fertilizers, and farming equipment at discounted rates for our members.",
     "icon": "ShoppingCart",
-    "features": ["Bulk discounts", "Quality assurance", "Timely delivery", "Credit facilities"],
-    "benefits": "Save up to 30% on input costs"
+    "features": ["Bulk discounts up to 30%", "Quality assurance", "Timely delivery", "Credit facilities"],
+    "benefits": "Save up to 30% on input costs",
+    "price": "Free for members",
+    "category": "Input Supply",
+    "availability": "Year-round"
   },
   {
     "id": 2,
@@ -14,7 +17,10 @@
     "description": "Direct connection between farmers and buyers, ensuring fair prices and reduced middleman costs.",
     "icon": "TrendingUp",
     "features": ["Direct buyer access", "Price negotiation", "Quality standards", "Transportation support"],
-    "benefits": "Increase income by 25-40%"
+    "benefits": "Increase income by 25-40%",
+    "price": "Commission based",
+    "category": "Marketing",
+    "availability": "Harvest seasons"
   },
   {
     "id": 3,
@@ -22,7 +28,10 @@
     "description": "Regular workshops and training sessions on modern farming techniques and business skills.",
     "icon": "BookOpen",
     "features": ["Expert trainers", "Practical sessions", "Certification", "Ongoing support"],
-    "benefits": "Improve productivity by 50%"
+    "benefits": "Improve productivity by 50%",
+    "price": "₹500 per session",
+    "category": "Education",
+    "availability": "Monthly programs"
   },
   {
     "id": 4,
@@ -30,6 +39,31 @@
     "description": "Access to credit, insurance, and other financial products tailored for farmers.",
     "icon": "CreditCard",
     "features": ["Low interest loans", "Crop insurance", "Savings schemes", "Financial literacy"],
-    "benefits": "Secure financial future"
+    "benefits": "Secure financial future",
+    "price": "Competitive rates",
+    "category": "Finance",
+    "availability": "On demand"
+  },
+  {
+    "id": 5,
+    "title": "Technical Advisory",
+    "description": "Expert guidance on crop selection, pest management, and modern farming techniques.",
+    "icon": "Users",
+    "features": ["Soil testing", "Crop planning", "Pest control", "Yield optimization"],
+    "benefits": "Increase crop yield by 30%",
+    "price": "Free consultation",
+    "category": "Advisory",
+    "availability": "24/7 helpline"
+  },
+  {
+    "id": 6,
+    "title": "Post-Harvest Support",
+    "description": "Storage, processing, and value addition services for farm produce.",
+    "icon": "Package",
+    "features": ["Cold storage", "Processing units", "Packaging", "Quality grading"],
+    "benefits": "Reduce post-harvest losses by 40%",
+    "price": "Usage based",
+    "category": "Processing",
+    "availability": "Post-harvest season"
   }
 ]

@@ -1,0 +1,30 @@
+
+{
+  "businessName": "Masters Farmers Producer Company Limited",
+  "shortName": "MFPCL",
+  "subtitle": "Empowering Farmers Through Collective Growth",
+  "tagline": "Transforming Agriculture, Enriching Lives",
+  "established": "2020",
+  "logo": "/placeholder.svg",
+  "website": "https://mfpcl.com",
+  "email": "info@mfpcl.com",
+  "phone": "+91-9876543210",
+  "address": {
+    "street": "Village Kusumtala",
+    "city": "Purulia",
+    "state": "West Bengal",
+    "pincode": "723101",
+    "country": "India"
+  },
+  "socialMedia": {
+    "facebook": "https://facebook.com/mfpcl",
+    "twitter": "https://twitter.com/mfpcl",
+    "instagram": "https://instagram.com/mfpcl",
+    "linkedin": "https://linkedin.com/company/mfpcl"
+  },
+  "stats": {
+    "members": "500+",
+    "incomeIncrease": "25%",
+    "qualityAssurance": "100%"
+  }
+}

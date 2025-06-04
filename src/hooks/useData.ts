@@ -138,3 +138,73 @@ export const useGallery = () => {
 
   return { gallery, loading };
 };
+
+// New hooks for the additional data
+export const useBasicInfo = () => {
+  const [basicInfo, setBasicInfo] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchBasicInfo = async () => {
+      try {
+        const response = await fetch('/src/data/basicInfo.json');
+        const data = await response.json();
+        setBasicInfo(data);
+      } catch (error) {
+        console.error('Error fetching basic info:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBasicInfo();
+  }, []);
+
+  return { basicInfo, loading };
+};
+
+export const useAbout = () => {
+  const [about, setAbout] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchAbout = async () => {
+      try {
+        const response = await fetch('/src/data/about.json');
+        const data = await response.json();
+        setAbout(data);
+      } catch (error) {
+        console.error('Error fetching about data:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchAbout();
+  }, []);
+
+  return { about, loading };
+};
+
+export const useContact = () => {
+  const [contact, setContact] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchContact = async () => {
+      try {
+        const response = await fetch('/src/data/contact.json');
+        const data = await response.json();
+        setContact(data);
+      } catch (error) {
+        console.error('Error fetching contact data:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchContact();
+  }, []);
+
+  return { contact, loading };
+};

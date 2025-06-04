@@ -1,0 +1,52 @@
+
+{
+  "mission": "To empower small and marginal farmers through collective farming, marketing, and capacity building initiatives that enhance their income and improve their quality of life.",
+  "vision": "To become the leading farmer producer company in West Bengal, creating sustainable agricultural ecosystems and prosperous farming communities.",
+  "values": [
+    "Transparency",
+    "Sustainability",
+    "Collective Growth",
+    "Quality Assurance",
+    "Farmer Empowerment"
+  ],
+  "story": "Founded in 2020, Masters Farmers Producer Company Limited (MFPCL) emerged from the collective vision of progressive farmers in Purulia district. Our journey began with a simple belief - that farmers, when united, can achieve remarkable success.",
+  "objectives": [
+    "Provide quality inputs at affordable prices",
+    "Ensure fair market prices for farm produce",
+    "Offer training and capacity building programs",
+    "Facilitate access to credit and insurance",
+    "Promote sustainable farming practices"
+  ],
+  "team": [
+    {
+      "id": 1,
+      "name": "Dr. Rajesh Kumar",
+      "position": "Chief Executive Officer",
+      "experience": "15+ years in Agriculture",
+      "expertise": "Organic Farming, Crop Management",
+      "image": "/placeholder.svg"
+    },
+    {
+      "id": 2,
+      "name": "Priya Sharma",
+      "position": "Marketing Director",
+      "experience": "12+ years in Digital Marketing",
+      "expertise": "Market Linkages, Digital Strategy",
+      "image": "/placeholder.svg"
+    },
+    {
+      "id": 3,
+      "name": "Ramesh Mahato",
+      "position": "Field Operations Manager",
+      "experience": "20+ years in Farming",
+      "expertise": "Field Operations, Farmer Relations",
+      "image": "/placeholder.svg"
+    }
+  ],
+  "achievements": [
+    "500+ active farmer members",
+    "25% average income increase for members",
+    "50+ successful training programs conducted",
+    "100% quality assured products"
+  ]
+}
