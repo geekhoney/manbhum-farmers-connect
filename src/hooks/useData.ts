@@ -8,7 +8,7 @@ export const useBlogs = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch('/src/data/blogs.json');
+        const response = await fetch('/public/data/blogs.json');
         const data = await response.json();
         setBlogs(data);
       } catch (error) {
@@ -31,7 +31,7 @@ export const useEvents = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await fetch('/src/data/events.json');
+        const response = await fetch('/public/data/events.json');
         const data = await response.json();
         setEvents(data);
       } catch (error) {
@@ -54,7 +54,7 @@ export const useCourses = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await fetch('/src/data/courses.json');
+        const response = await fetch('/public/data/courses.json');
         const data = await response.json();
         setCourses(data);
       } catch (error) {
@@ -77,7 +77,7 @@ export const useServices = () => {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const response = await fetch('/src/data/services.json');
+        const response = await fetch('/public/data/services.json');
         const data = await response.json();
         setServices(data);
       } catch (error) {
@@ -100,7 +100,7 @@ export const useProducts = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('/src/data/products.json');
+        const response = await fetch('/public/data/products.json');
         const data = await response.json();
         setProducts(data);
       } catch (error) {
@@ -123,7 +123,7 @@ export const useGallery = () => {
   useEffect(() => {
     const fetchGallery = async () => {
       try {
-        const response = await fetch('/src/data/gallery.json');
+        const response = await fetch('/public/data/gallery.json');
         const data = await response.json();
         setGallery(data);
       } catch (error) {
@@ -147,7 +147,7 @@ export const useBasicInfo = () => {
   useEffect(() => {
     const fetchBasicInfo = async () => {
       try {
-        const response = await fetch('/src/data/basicInfo.json');
+        const response = await fetch('/public/data/basicInfo.json');
         const data = await response.json();
         setBasicInfo(data);
       } catch (error) {
@@ -170,7 +170,7 @@ export const useAbout = () => {
   useEffect(() => {
     const fetchAbout = async () => {
       try {
-        const response = await fetch('/src/data/about.json');
+        const response = await fetch('/public/data/about.json');
         const data = await response.json();
         setAbout(data);
       } catch (error) {
@@ -193,7 +193,7 @@ export const useContact = () => {
   useEffect(() => {
     const fetchContact = async () => {
       try {
-        const response = await fetch('/src/data/contact.json');
+        const response = await fetch('/public/data/contact.json');
         const data = await response.json();
         setContact(data);
       } catch (error) {
