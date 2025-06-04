@@ -6,6 +6,18 @@ import { useBasicInfo } from '@/hooks/useData';
 
 const AboutSection = () => {
   const { basicInfo, loading } = useBasicInfo();
+
+   if (loading || !basicInfo) {
+    return (
+      <section className="relative py-20 lg:py-28 bg-gradient-to-br from-green-600 via-green-700 to-green-800 text-white overflow-hidden">
+        <div className="container mx-auto px-6 relative">
+          <div className="text-center">
+            <div className="text-lg">Loading...</div>
+          </div>
+        </div>
+      </section>
+    );
+  }
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-6">
