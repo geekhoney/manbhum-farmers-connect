@@ -1,13 +1,10 @@
-
-import React, { Suspense } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Users, TrendingUp, Shield } from 'lucide-react';
-import AgricultureAnimation from './AgricultureAnimation';
 
 const HeroSection = () => {
-  return (
-    <section className="relative py-20 lg:py-28 bg-gradient-to-br from-green-600 via-green-700 to-green-800 text-white overflow-hidden">
+  return <section className="relative py-20 lg:py-28 bg-gradient-to-br from-green-600 via-green-700 to-green-800 text-white overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
@@ -23,7 +20,7 @@ const HeroSection = () => {
                 <span className="text-green-200 block">Collective Growth</span>
               </h1>
               <p className="text-lg md:text-xl text-green-100 max-w-lg">
-                Join Masters Farmers Producer Company Limited (MFPCL) and transform your farming journey with collective marketing, better prices, and sustainable practices.
+                Join Manbhum Farmers Producer Company Limited (MFPCL) and transform your farming journey with collective marketing, better prices, and sustainable practices.
               </p>
             </div>
             
@@ -35,11 +32,12 @@ const HeroSection = () => {
                 </Button>
               </Link>
               <Link to="/about">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-600">
+                <Button size="lg" variant="outline" className="border-white border-green-600 text-green-500 hover:bg-green-600 hover:text-white ">
                   Learn More
                 </Button>
               </Link>
             </div>
+            
             
             <div className="grid grid-cols-3 gap-6 pt-8">
               <div className="text-center">
@@ -60,19 +58,8 @@ const HeroSection = () => {
             </div>
           </div>
           
+          
           <div className="relative lg:block">
-            {/* 3D Agriculture Animation */}
-            <div className="mb-6">
-              <Suspense fallback={
-                <div className="w-full h-96 rounded-lg bg-green-500/20 flex items-center justify-center">
-                  <div className="text-green-200">Loading 3D Animation...</div>
-                </div>
-              }>
-                <AgricultureAnimation />
-              </Suspense>
-            </div>
-            
-            {/* Info Card */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
               <div className="space-y-6">
                 <h3 className="text-2xl font-semibold mb-4">Why Choose MFPCL?</h3>
@@ -110,8 +97,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
 
 export default HeroSection;
