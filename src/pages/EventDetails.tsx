@@ -7,9 +7,36 @@ import { Button } from '@/components/ui/button';
 import { Calendar, MapPin, Clock, Users, ArrowLeft, Share2, User } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { useToast } from '@/hooks/use-toast';
 
 const EventDetails = () => {
   const { id } = useParams();
+  const { toast } = useToast();
+
+  const handleRegister = () => {
+    toast({
+      title: "Registration Successful!",
+      description: `You have successfully registered for "${event.title}". Check your email for confirmation details.`,
+      duration: 5000,
+    });
+  };
+
+  const handleShare = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: event.title,
+        text: event.description,
+        url: window.location.href,
+      });
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      toast({
+        title: "Link Copied!",
+        description: "Event link has been copied to your clipboard.",
+        duration: 3000,
+      });
+    }
+  };
 
   // Mock event data (in real app, fetch by ID)
   const event = {
@@ -71,7 +98,7 @@ const EventDetails = () => {
     registered: 32,
     price: "Free for Members",
     status: "Open",
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     speaker: "Dr. Rajesh Kumar",
     speakerBio: "Agricultural Expert with 15+ years experience in organic farming"
   };
@@ -136,10 +163,14 @@ const EventDetails = () => {
             <div className="space-y-4">
               <div className="text-2xl font-bold text-green-600">{event.price}</div>
               <div className="flex space-x-4">
-                <Button size="lg" className="bg-green-600 hover:bg-green-700 flex-1">
+                <Button 
+                  size="lg" 
+                  className="bg-green-600 hover:bg-green-700 flex-1"
+                  onClick={handleRegister}
+                >
                   Register Now
                 </Button>
-                <Button variant="outline" size="lg">
+                <Button variant="outline" size="lg" onClick={handleShare}>
                   <Share2 className="h-4 w-4 mr-2" />
                   Share
                 </Button>
@@ -180,7 +211,11 @@ const EventDetails = () => {
               <p className="text-green-700 mb-6">
                 Limited seats available. Register now to secure your spot and advance your farming knowledge.
               </p>
-              <Button size="lg" className="bg-green-600 hover:bg-green-700">
+              <Button 
+                size="lg" 
+                className="bg-green-600 hover:bg-green-700"
+                onClick={handleRegister}
+              >
                 Register for {event.price}
               </Button>
             </CardContent>

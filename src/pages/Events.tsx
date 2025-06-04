@@ -6,81 +6,55 @@ import { Button } from '@/components/ui/button';
 import { Calendar, MapPin, Clock, Users, ArrowRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { useEvents } from '@/hooks/useData';
+import { useToast } from '@/hooks/use-toast';
 
 const Events = () => {
-  const upcomingEvents = [
-    {
-      id: 1,
-      title: "Sustainable Farming Workshop",
-      description: "Learn advanced techniques in organic farming and sustainable agricultural practices from expert trainers.",
-      date: "2025-06-15",
-      time: "10:00 AM - 4:00 PM",
-      location: "MFPCL Training Center, Purulia",
-      type: "Workshop",
-      capacity: 50,
-      registered: 32,
-      price: "Free for Members",
-      status: "Open"
-    },
-    {
-      id: 2,
-      title: "Digital Marketing for Farm Produce",
-      description: "Master the art of selling your agricultural products online and reaching wider markets through digital platforms.",
-      date: "2025-06-20",
-      time: "2:00 PM - 6:00 PM",
-      location: "Online Webinar",
-      type: "Webinar",
-      capacity: 100,
-      registered: 67,
-      price: "₹200",
-      status: "Open"
-    },
-    {
-      id: 3,
-      title: "Collective Farming Success Meet",
-      description: "Annual gathering of MFPCL members to share success stories and plan for the upcoming agricultural season.",
-      date: "2025-06-25",
-      time: "9:00 AM - 5:00 PM",
-      location: "Community Hall, Bankura",
-      type: "Conference",
-      capacity: 200,
-      registered: 156,
-      price: "Free for Members",
-      status: "Filling Fast"
-    }
-  ];
+  const { events, loading } = useEvents();
+  const { toast } = useToast();
 
-  const pastEvents = [
-    {
-      id: 4,
-      title: "Crop Insurance Awareness Program",
-      description: "Educational session about various crop insurance schemes and how to apply for them.",
-      date: "2025-05-10",
-      location: "District Collector Office, Purulia",
-      type: "Seminar",
-      attendees: 85
-    },
-    {
-      id: 5,
-      title: "Organic Certification Training",
-      description: "Comprehensive training on organic farming standards and certification process.",
-      date: "2025-04-28",
-      location: "MFPCL Training Center",
-      type: "Training",
-      attendees: 42
-    }
-  ];
+  const handleRegister = (eventTitle: string) => {
+    toast({
+      title: "Registration Successful!",
+      description: `You have successfully registered for "${eventTitle}". Check your email for confirmation details.`,
+      duration: 5000,
+    });
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
+        <Header />
+        <div className="flex items-center justify-center h-64">
+          <div className="text-lg">Loading events...</div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
+  const upcomingEvents = events.filter(event => new Date(event.date) >= new Date());
+  const pastEvents = events.filter(event => new Date(event.date) < new Date());
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
       <Header />
       
       {/* Hero Section */}
-      <section className="py-16 bg-green-600 text-white">
-        <div className="container mx-auto px-6 text-center">
+      <section className="py-16 bg-green-600 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black opacity-20"></div>
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'url(https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}></div>
+        <div className="container mx-auto px-6 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Events & Workshops</h1>
           <p className="text-xl text-green-100 max-w-3xl mx-auto">
             Join our community events, workshops, and training sessions to enhance your farming knowledge and network with fellow farmers
+          </p>
+          <p className="text-lg text-green-200 mt-4">
+            Masters Farmers Producer Company Limited (MFPCL)
           </p>
         </div>
       </section>
@@ -138,7 +112,11 @@ const Events = () => {
                   
                   <div className="flex items-center justify-between">
                     <span className="font-semibold text-green-600">{event.price}</span>
-                    <Button size="sm" className="bg-green-600 hover:bg-green-700">
+                    <Button 
+                      size="sm" 
+                      className="bg-green-600 hover:bg-green-700"
+                      onClick={() => handleRegister(event.title)}
+                    >
                       Register Now <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </div>
@@ -150,43 +128,51 @@ const Events = () => {
       </section>
 
       {/* Past Events */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-green-800 mb-8 text-center">Past Events</h2>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {pastEvents.map((event) => (
-              <Card key={event.id} className="opacity-75">
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <Badge variant="outline">{event.type}</Badge>
-                    <span className="text-sm text-gray-500">{event.attendees} attendees</span>
-                  </div>
-                  <CardTitle className="text-lg">{event.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 mb-4">{event.description}</p>
-                  
-                  <div className="space-y-2">
-                    <div className="flex items-center text-sm text-gray-600">
-                      <Calendar className="h-4 w-4 mr-2 text-green-600" />
-                      {new Date(event.date).toLocaleDateString()}
+      {pastEvents.length > 0 && (
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-6">
+            <h2 className="text-3xl font-bold text-green-800 mb-8 text-center">Past Events</h2>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              {pastEvents.map((event) => (
+                <Card key={event.id} className="opacity-75">
+                  <CardHeader>
+                    <div className="flex items-center justify-between mb-2">
+                      <Badge variant="outline">{event.type}</Badge>
+                      <span className="text-sm text-gray-500">Completed</span>
                     </div>
-                    <div className="flex items-center text-sm text-gray-600">
-                      <MapPin className="h-4 w-4 mr-2 text-green-600" />
-                      {event.location}
+                    <CardTitle className="text-lg">{event.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600 mb-4">{event.description}</p>
+                    
+                    <div className="space-y-2">
+                      <div className="flex items-center text-sm text-gray-600">
+                        <Calendar className="h-4 w-4 mr-2 text-green-600" />
+                        {new Date(event.date).toLocaleDateString()}
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <MapPin className="h-4 w-4 mr-2 text-green-600" />
+                        {event.location}
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Call to Action */}
-      <section className="py-16 bg-green-600 text-white">
-        <div className="container mx-auto px-6 text-center">
+      <section className="py-16 bg-green-600 text-white relative overflow-hidden">
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'url(https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: 0.3
+        }}></div>
+        <div className="container mx-auto px-6 text-center relative z-10">
           <h2 className="text-3xl font-bold mb-4">Don't Miss Our Next Event!</h2>
           <p className="text-green-100 mb-8 max-w-2xl mx-auto">
             Subscribe to our newsletter to get notified about upcoming workshops, seminars, and training programs
