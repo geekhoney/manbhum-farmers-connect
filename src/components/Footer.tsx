@@ -1,8 +1,28 @@
+
 import React from 'react';
 import { Sprout, Phone, Mail, MapPin, Facebook, Instagram, Youtube, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useBasicInfo } from '@/hooks/useData';
+
 const Footer = () => {
-  return <footer className="bg-green-800 text-white">
+  const { basicInfo, loading } = useBasicInfo();
+
+  if (loading) {
+    return (
+      <footer className="bg-green-800 text-white">
+        <div className="container mx-auto px-6 py-12">
+          <div className="text-center">Loading...</div>
+        </div>
+      </footer>
+    );
+  }
+
+  if (!basicInfo) {
+    return null;
+  }
+
+  return (
+    <footer className="bg-green-800 text-white">
       <div className="container mx-auto px-6 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -12,12 +32,15 @@ const Footer = () => {
                 <Sprout className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="font-bold text-lg">MFPCL</h3>
-                <p className="text-sm text-green-200">Manbhum Farmers Producer Company Limited</p>
+                <h3 className="font-bold text-lg">{basicInfo.shortName}</h3>
+                <p className="text-sm text-green-200">{basicInfo.businessName}</p>
               </div>
             </div>
             <p className="text-green-200 text-sm">
-              Empowering farmers through collective growth, sustainable practices, and fair market access. Building a prosperous farming community together.
+              {basicInfo.subtitle}. {basicInfo.tagline}
+            </p>
+            <p className="text-green-200 text-xs">
+              Established: {basicInfo.established}
             </p>
           </div>
 
@@ -42,18 +65,17 @@ const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-start space-x-3">
                 <Phone className="h-4 w-4 text-green-400 mt-1" />
-                <div>
-                  <p className="text-green-200">+91 12345 67890</p>
-                  <p className="text-green-200">+91 98765 43210</p>
-                </div>
+                <p className="text-green-200">{basicInfo.phone}</p>
               </div>
               <div className="flex items-start space-x-3">
                 <Mail className="h-4 w-4 text-green-400 mt-1" />
-                <p className="text-green-200">info@mfpcl.com</p>
+                <p className="text-green-200">{basicInfo.email}</p>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 text-green-400 mt-1" />
-                <p className="text-green-200">Manbhum District, West Bengal, India</p>
+                <p className="text-green-200">
+                  {basicInfo.address.street}, {basicInfo.address.city}, {basicInfo.address.state} {basicInfo.address.pincode}, {basicInfo.address.country}
+                </p>
               </div>
             </div>
           </div>
@@ -89,7 +111,7 @@ const Footer = () => {
         <div className="border-t border-green-700 mt-8 pt-8 text-center">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-green-200 text-sm">
-              © 2025 Manbhum Farmers Producer Company Limited. All rights reserved.
+              © 2025 {basicInfo.businessName}. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-green-200 hover:text-white transition-colors">Privacy Policy</a>
@@ -99,6 +121,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;

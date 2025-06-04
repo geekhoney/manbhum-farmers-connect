@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -42,7 +43,7 @@ const Events = () => {
       {/* Hero Section */}
       <section className="py-16 bg-green-600 text-white relative overflow-hidden">
         {/* Dark overlay for better text visibility */}
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
         <div 
           style={{
             backgroundImage: 'url(https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)',
@@ -52,13 +53,13 @@ const Events = () => {
           className="absolute inset-0"
         ></div>
         <div className="container mx-auto px-6 text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-green-100 drop-shadow-lg">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white drop-shadow-2xl">
             Events & Workshops
           </h1>
-          <p className="text-xl text-green-50 max-w-3xl mx-auto drop-shadow-md">
+          <p className="text-xl text-green-100 max-w-3xl mx-auto drop-shadow-lg font-medium">
             Join our community events, workshops, and training sessions to enhance your farming knowledge and network with fellow farmers
           </p>
-          <p className="text-lg text-green-200 mt-4 font-semibold drop-shadow-md">
+          <p className="text-lg text-green-200 mt-4 font-bold drop-shadow-lg">
             Masters Farmers Producer Company Limited (MFPCL)
           </p>
         </div>
