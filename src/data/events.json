@@ -1,0 +1,51 @@
+
+[
+  {
+    "id": 1,
+    "title": "Sustainable Farming Workshop",
+    "description": "Learn advanced techniques in organic farming and sustainable agricultural practices from expert trainers.",
+    "date": "2025-06-15",
+    "time": "10:00 AM - 4:00 PM",
+    "location": "MFPCL Training Center, Purulia",
+    "type": "Workshop",
+    "capacity": 50,
+    "registered": 32,
+    "price": "Free for Members",
+    "status": "Open",
+    "image": "/placeholder.svg",
+    "speaker": "Dr. Rajesh Kumar",
+    "speakerBio": "Agricultural Expert with 15+ years experience in organic farming"
+  },
+  {
+    "id": 2,
+    "title": "Digital Marketing Webinar",
+    "description": "Learn how to market your farm produce online and reach wider audiences.",
+    "date": "2025-06-20",
+    "time": "3:00 PM - 5:00 PM",
+    "location": "Online",
+    "type": "Webinar",
+    "capacity": 100,
+    "registered": 67,
+    "price": "₹200",
+    "status": "Open",
+    "image": "/placeholder.svg",
+    "speaker": "Priya Sharma",
+    "speakerBio": "Digital Marketing Expert"
+  },
+  {
+    "id": 3,
+    "title": "Collective Farming Success Meet",
+    "description": "Meet successful farmers and learn about collective farming strategies.",
+    "date": "2025-06-25",
+    "time": "10:00 AM - 2:00 PM",
+    "location": "Community Hall, Bankura",
+    "type": "Meeting",
+    "capacity": 200,
+    "registered": 156,
+    "price": "Free for Members",
+    "status": "Open",
+    "image": "/placeholder.svg",
+    "speaker": "MFPCL Team",
+    "speakerBio": "Farmer Producer Company Representatives"
+  }
+]

@@ -1,0 +1,31 @@
+
+[
+  {
+    "id": 1,
+    "title": "Organic Farm Visit",
+    "category": "Farm Visits",
+    "image": "/placeholder.svg",
+    "date": "2024-05-15"
+  },
+  {
+    "id": 2,
+    "title": "Training Workshop",
+    "category": "Training",
+    "image": "/placeholder.svg",
+    "date": "2024-05-10"
+  },
+  {
+    "id": 3,
+    "title": "Farmer Meeting",
+    "category": "Meetings",
+    "image": "/placeholder.svg",
+    "date": "2024-05-05"
+  },
+  {
+    "id": 4,
+    "title": "Harvest Festival",
+    "category": "Events",
+    "image": "/placeholder.svg",
+    "date": "2024-04-30"
+  }
+]

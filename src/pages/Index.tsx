@@ -11,136 +11,25 @@ import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
 import StatsSection from "@/components/StatsSection";
 import Footer from "@/components/Footer";
+import { useProducts, useBlogs, useCourses, useEvents } from "@/hooks/useData";
 
 const Index = () => {
-  // Recent products data
-  const recentProducts = [
-    {
-      id: 1,
-      name: 'Organic Tomatoes',
-      price: 120,
-      originalPrice: 150,
-      image: '/placeholder.svg',
-      rating: 4.5
-    },
-    {
-      id: 2,
-      name: 'Fresh Spinach',
-      price: 80,
-      originalPrice: 100,
-      image: '/placeholder.svg',
-      rating: 4.2
-    },
-    {
-      id: 3,
-      name: 'Organic Rice',
-      price: 2500,
-      originalPrice: 3000,
-      image: '/placeholder.svg',
-      rating: 4.8
-    },
-    {
-      id: 4,
-      name: 'Vermicompost',
-      price: 500,
-      originalPrice: 600,
-      image: '/placeholder.svg',
-      rating: 4.6
-    }
-  ];
+  const { products, loading: productsLoading } = useProducts();
+  const { blogs, loading: blogsLoading } = useBlogs();
+  const { courses, loading: coursesLoading } = useCourses();
+  const { events, loading: eventsLoading } = useEvents();
 
-  // Latest blogs data
-  const latestBlogs = [
-    {
-      id: 1,
-      title: "Sustainable Farming Practices for Better Yields",
-      excerpt: "Learn about organic farming techniques that can increase your crop yield while maintaining soil health.",
-      author: "Dr. Rajesh Kumar",
-      date: "2024-05-28",
-      readTime: "5 min read",
-      image: '/placeholder.svg'
-    },
-    {
-      id: 2,
-      title: "Market Trends in Agricultural Commodities 2024",
-      excerpt: "Comprehensive analysis of current market trends and price forecasts for major agricultural commodities.",
-      author: "Priya Sharma",
-      date: "2024-05-25",
-      readTime: "8 min read",
-      image: '/placeholder.svg'
-    },
-    {
-      id: 3,
-      title: "Success Story: Collective Farming in Rural Bengal",
-      excerpt: "How MFPCL members achieved 40% increase in income through collective farming and direct market linkages.",
-      author: "MFPCL Team",
-      date: "2024-05-22",
-      readTime: "6 min read",
-      image: '/placeholder.svg'
-    }
-  ];
-
-  // Popular courses data
-  const popularCourses = [
-    {
-      id: 1,
-      title: "Organic Farming Fundamentals",
-      duration: "4 weeks",
-      price: 2500,
-      students: 156,
-      rating: 4.8,
-      image: '/placeholder.svg'
-    },
-    {
-      id: 2,
-      title: "Digital Marketing for Farm Produce",
-      duration: "3 weeks",
-      price: 3200,
-      students: 89,
-      rating: 4.6,
-      image: '/placeholder.svg'
-    },
-    {
-      id: 3,
-      title: "Post-Harvest Technology",
-      duration: "2 weeks",
-      price: 2000,
-      students: 124,
-      rating: 4.7,
-      image: '/placeholder.svg'
-    }
-  ];
-
-  // Upcoming events data
-  const upcomingEvents = [
-    {
-      id: 1,
-      title: "Sustainable Farming Workshop",
-      date: "2024-06-15",
-      location: "MFPCL Training Center",
-      price: "Free for Members",
-      registered: 32,
-      capacity: 50
-    },
-    {
-      id: 2,
-      title: "Digital Marketing Webinar",
-      date: "2024-06-20",
-      location: "Online",
-      price: "₹200",
-      registered: 67,
-      capacity: 100
-    },
-    {
-      id: 3,
-      title: "Collective Farming Success Meet",
-      date: "2024-06-25",
-      location: "Community Hall, Bankura",
-      price: "Free for Members",
-      registered: 156,
-      capacity: 200
-    }
-  ];
+  // Get recent products (first 4)
+  const recentProducts = products.slice(0, 4);
+  
+  // Get latest blogs (first 3)
+  const latestBlogs = blogs.slice(0, 3);
+  
+  // Get popular courses (first 3)
+  const popularCourses = courses.slice(0, 3);
+  
+  // Get upcoming events (first 3)
+  const upcomingEvents = events.slice(0, 3);
 
   return (
     <div className="min-h-screen bg-white">
@@ -165,35 +54,45 @@ const Index = () => {
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {recentProducts.map((product) => (
-              <Card key={product.id} className="hover:shadow-lg transition-shadow">
-                <div className="aspect-square bg-green-100 rounded-t-lg overflow-hidden">
-                  <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
-                </div>
-                <CardContent className="p-4">
-                  <h3 className="font-semibold mb-2">{product.name}</h3>
-                  <div className="flex items-center mb-2">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className={`h-4 w-4 ${i < Math.floor(product.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />
-                    ))}
-                    <span className="ml-2 text-sm text-gray-600">{product.rating}</span>
+          {productsLoading ? (
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[...Array(4)].map((_, i) => (
+                <div key={i} className="bg-gray-200 animate-pulse h-64 rounded-lg"></div>
+              ))}
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {recentProducts.map((product: any) => (
+                <Card key={product.id} className="hover:shadow-lg transition-shadow">
+                  <div className="aspect-square bg-green-100 rounded-t-lg overflow-hidden">
+                    <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
                   </div>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <span className="font-bold text-green-600">₹{product.price}</span>
-                      {product.originalPrice > product.price && (
-                        <span className="text-sm text-gray-500 line-through">₹{product.originalPrice}</span>
-                      )}
+                  <CardContent className="p-4">
+                    <h3 className="font-semibold mb-2">{product.name}</h3>
+                    <div className="flex items-center mb-2">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className={`h-4 w-4 ${i < Math.floor(product.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />
+                      ))}
+                      <span className="ml-2 text-sm text-gray-600">{product.rating}</span>
                     </div>
-                    <Button size="sm" className="bg-green-600 hover:bg-green-700">
-                      <ShoppingCart className="h-4 w-4" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <span className="font-bold text-green-600">₹{product.price}</span>
+                        {product.originalPrice > product.price && (
+                          <span className="text-sm text-gray-500 line-through">₹{product.originalPrice}</span>
+                        )}
+                      </div>
+                      <Link to={`/store/product/${product.id}`}>
+                        <Button size="sm" className="bg-green-600 hover:bg-green-700">
+                          <ShoppingCart className="h-4 w-4" />
+                        </Button>
+                      </Link>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
@@ -212,28 +111,36 @@ const Index = () => {
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {latestBlogs.map((blog) => (
-              <Card key={blog.id} className="hover:shadow-lg transition-shadow">
-                <div className="aspect-video bg-green-100 rounded-t-lg overflow-hidden">
-                  <img src={blog.image} alt={blog.title} className="w-full h-full object-cover" />
-                </div>
-                <CardContent className="p-4">
-                  <h3 className="font-semibold mb-2 line-clamp-2">{blog.title}</h3>
-                  <p className="text-gray-600 text-sm mb-3 line-clamp-2">{blog.excerpt}</p>
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-3">
-                    <span>{blog.author}</span>
-                    <span>{blog.readTime}</span>
+          {blogsLoading ? (
+            <div className="grid md:grid-cols-3 gap-6">
+              {[...Array(3)].map((_, i) => (
+                <div key={i} className="bg-gray-200 animate-pulse h-80 rounded-lg"></div>
+              ))}
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-3 gap-6">
+              {latestBlogs.map((blog: any) => (
+                <Card key={blog.id} className="hover:shadow-lg transition-shadow">
+                  <div className="aspect-video bg-green-100 rounded-t-lg overflow-hidden">
+                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover" />
                   </div>
-                  <Link to={`/news/blogs/${blog.id}`}>
-                    <Button variant="outline" size="sm" className="w-full border-green-600 text-green-600 hover:bg-green-600 hover:text-white">
-                      Read More
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                  <CardContent className="p-4">
+                    <h3 className="font-semibold mb-2 line-clamp-2">{blog.title}</h3>
+                    <p className="text-gray-600 text-sm mb-3 line-clamp-2">{blog.excerpt}</p>
+                    <div className="flex items-center justify-between text-sm text-gray-500 mb-3">
+                      <span>{blog.author}</span>
+                      <span>{blog.readTime}</span>
+                    </div>
+                    <Link to={`/news/blogs/${blog.id}`}>
+                      <Button variant="outline" size="sm" className="w-full border-green-600 text-green-600 hover:bg-green-600 hover:text-white">
+                        Read More
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
@@ -252,42 +159,50 @@ const Index = () => {
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {popularCourses.map((course) => (
-              <Card key={course.id} className="hover:shadow-lg transition-shadow">
-                <div className="aspect-video bg-blue-100 rounded-t-lg overflow-hidden">
-                  <img src={course.image} alt={course.title} className="w-full h-full object-cover" />
-                </div>
-                <CardContent className="p-4">
-                  <h3 className="font-semibold mb-2">{course.title}</h3>
-                  <div className="flex items-center justify-between text-sm text-gray-600 mb-3">
-                    <span className="flex items-center">
-                      <BookOpen className="h-4 w-4 mr-1" />
-                      {course.duration}
-                    </span>
-                    <span className="flex items-center">
-                      <Users className="h-4 w-4 mr-1" />
-                      {course.students} students
-                    </span>
+          {coursesLoading ? (
+            <div className="grid md:grid-cols-3 gap-6">
+              {[...Array(3)].map((_, i) => (
+                <div key={i} className="bg-gray-200 animate-pulse h-80 rounded-lg"></div>
+              ))}
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-3 gap-6">
+              {popularCourses.map((course: any) => (
+                <Card key={course.id} className="hover:shadow-lg transition-shadow">
+                  <div className="aspect-video bg-blue-100 rounded-t-lg overflow-hidden">
+                    <img src={course.image} alt={course.title} className="w-full h-full object-cover" />
                   </div>
-                  <div className="flex items-center mb-3">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className={`h-4 w-4 ${i < Math.floor(course.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />
-                    ))}
-                    <span className="ml-2 text-sm text-gray-600">{course.rating}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="font-bold text-green-600 text-lg">₹{course.price.toLocaleString()}</span>
-                    <Link to={`/news/training/${course.id}`}>
-                      <Button size="sm" className="bg-green-600 hover:bg-green-700">
-                        Enroll Now
-                      </Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                  <CardContent className="p-4">
+                    <h3 className="font-semibold mb-2">{course.title}</h3>
+                    <div className="flex items-center justify-between text-sm text-gray-600 mb-3">
+                      <span className="flex items-center">
+                        <BookOpen className="h-4 w-4 mr-1" />
+                        {course.duration}
+                      </span>
+                      <span className="flex items-center">
+                        <Users className="h-4 w-4 mr-1" />
+                        {course.students} students
+                      </span>
+                    </div>
+                    <div className="flex items-center mb-3">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className={`h-4 w-4 ${i < Math.floor(course.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />
+                      ))}
+                      <span className="ml-2 text-sm text-gray-600">{course.rating}</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="font-bold text-green-600 text-lg">₹{course.price.toLocaleString()}</span>
+                      <Link to={`/news/training/${course.id}`}>
+                        <Button size="sm" className="bg-green-600 hover:bg-green-700">
+                          Enroll Now
+                        </Button>
+                      </Link>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
@@ -306,41 +221,49 @@ const Index = () => {
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {upcomingEvents.map((event) => (
-              <Card key={event.id} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <Badge className="bg-green-100 text-green-800">Event</Badge>
-                    <span className="text-sm text-gray-500">
-                      {event.registered}/{event.capacity} registered
-                    </span>
-                  </div>
-                  <CardTitle className="text-lg">{event.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-center text-sm text-gray-600">
-                      <Calendar className="h-4 w-4 mr-2 text-green-600" />
-                      {new Date(event.date).toLocaleDateString()}
+          {eventsLoading ? (
+            <div className="grid md:grid-cols-3 gap-6">
+              {[...Array(3)].map((_, i) => (
+                <div key={i} className="bg-gray-200 animate-pulse h-64 rounded-lg"></div>
+              ))}
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-3 gap-6">
+              {upcomingEvents.map((event: any) => (
+                <Card key={event.id} className="hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <div className="flex items-center justify-between mb-2">
+                      <Badge className="bg-green-100 text-green-800">{event.type}</Badge>
+                      <span className="text-sm text-gray-500">
+                        {event.registered}/{event.capacity} registered
+                      </span>
                     </div>
-                    <div className="flex items-center text-sm text-gray-600">
-                      <Users className="h-4 w-4 mr-2 text-green-600" />
-                      {event.location}
+                    <CardTitle className="text-lg">{event.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2 mb-4">
+                      <div className="flex items-center text-sm text-gray-600">
+                        <Calendar className="h-4 w-4 mr-2 text-green-600" />
+                        {new Date(event.date).toLocaleDateString()}
+                      </div>
+                      <div className="flex items-center text-sm text-gray-600">
+                        <Users className="h-4 w-4 mr-2 text-green-600" />
+                        {event.location}
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="font-semibold text-green-600">{event.price}</span>
-                    <Link to={`/news/events/${event.id}`}>
-                      <Button size="sm" className="bg-green-600 hover:bg-green-700">
-                        Register
-                      </Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                    <div className="flex items-center justify-between">
+                      <span className="font-semibold text-green-600">{event.price}</span>
+                      <Link to={`/news/events/${event.id}`}>
+                        <Button size="sm" className="bg-green-600 hover:bg-green-700">
+                          Register
+                        </Button>
+                      </Link>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

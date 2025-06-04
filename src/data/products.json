@@ -1,0 +1,51 @@
+
+[
+  {
+    "id": 1,
+    "name": "Organic Tomatoes",
+    "price": 120,
+    "originalPrice": 150,
+    "image": "/placeholder.svg",
+    "rating": 4.5,
+    "category": "Vegetables",
+    "description": "Fresh organic tomatoes grown without chemical pesticides",
+    "inStock": true,
+    "unit": "kg"
+  },
+  {
+    "id": 2,
+    "name": "Fresh Spinach",
+    "price": 80,
+    "originalPrice": 100,
+    "image": "/placeholder.svg",
+    "rating": 4.2,
+    "category": "Leafy Greens",
+    "description": "Nutrient-rich spinach leaves, freshly harvested",
+    "inStock": true,
+    "unit": "bunch"
+  },
+  {
+    "id": 3,
+    "name": "Organic Rice",
+    "price": 2500,
+    "originalPrice": 3000,
+    "image": "/placeholder.svg",
+    "rating": 4.8,
+    "category": "Grains",
+    "description": "Premium quality organic basmati rice",
+    "inStock": true,
+    "unit": "25kg bag"
+  },
+  {
+    "id": 4,
+    "name": "Vermicompost",
+    "price": 500,
+    "originalPrice": 600,
+    "image": "/placeholder.svg",
+    "rating": 4.6,
+    "category": "Fertilizers",
+    "description": "High-quality vermicompost for organic farming",
+    "inStock": true,
+    "unit": "50kg bag"
+  }
+]

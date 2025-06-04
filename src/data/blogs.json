@@ -1,0 +1,39 @@
+
+[
+  {
+    "id": 1,
+    "title": "Sustainable Farming Practices for Better Yields",
+    "excerpt": "Learn about organic farming techniques that can increase your crop yield while maintaining soil health and environmental sustainability.",
+    "author": "Dr. Rajesh Kumar",
+    "date": "2024-05-28",
+    "category": "Sustainable Farming",
+    "readTime": "5 min read",
+    "views": 245,
+    "image": "/placeholder.svg",
+    "content": "<h2>Introduction to Sustainable Farming</h2><p>Sustainable farming practices are essential for maintaining soil health while maximizing crop yields...</p>"
+  },
+  {
+    "id": 2,
+    "title": "Market Trends in Agricultural Commodities 2024",
+    "excerpt": "Comprehensive analysis of current market trends and price forecasts for major agricultural commodities in the upcoming season.",
+    "author": "Priya Sharma",
+    "date": "2024-05-25",
+    "category": "Market Analysis",
+    "readTime": "8 min read",
+    "views": 189,
+    "image": "/placeholder.svg",
+    "content": "<h2>Market Overview</h2><p>The agricultural commodity market is experiencing significant changes...</p>"
+  },
+  {
+    "id": 3,
+    "title": "Success Story: Collective Farming in Rural Bengal",
+    "excerpt": "How MFPCL members achieved 40% increase in income through collective farming and direct market linkages.",
+    "author": "MFPCL Team",
+    "date": "2024-05-22",
+    "category": "Success Story",
+    "readTime": "6 min read",
+    "views": 312,
+    "image": "/placeholder.svg",
+    "content": "<h2>Our Success Story</h2><p>Through collective farming initiatives, our members have achieved remarkable results...</p>"
+  }
+]

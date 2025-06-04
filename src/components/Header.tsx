@@ -2,22 +2,26 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Sprout, Menu, X, User, LogOut } from 'lucide-react';
+import { Sprout, Menu, X, User, LogOut, ChevronDown } from 'lucide-react';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(true); // Demo: set to true to show profile
   const location = useLocation();
-
-  const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Store', path: '/store' },
-    { name: 'News', path: '/news/blogs' },
-    { name: 'Training', path: '/news/training' },
-    { name: 'Contact', path: '/contact' }
-  ];
 
   const handleLogout = () => {
     setIsLoggedIn(false);
@@ -37,18 +41,81 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`text-gray-700 hover:text-green-600 transition-colors ${
-                  location.pathname === item.path ? 'text-green-600 font-semibold' : ''
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
+          <nav className="hidden md:flex items-center space-x-6">
+            <Link
+              to="/"
+              className={`text-gray-700 hover:text-green-600 transition-colors ${
+                location.pathname === '/' ? 'text-green-600 font-semibold' : ''
+              }`}
+            >
+              Home
+            </Link>
+            <Link
+              to="/about"
+              className={`text-gray-700 hover:text-green-600 transition-colors ${
+                location.pathname === '/about' ? 'text-green-600 font-semibold' : ''
+              }`}
+            >
+              About
+            </Link>
+            <Link
+              to="/services"
+              className={`text-gray-700 hover:text-green-600 transition-colors ${
+                location.pathname === '/services' ? 'text-green-600 font-semibold' : ''
+              }`}
+            >
+              Services
+            </Link>
+
+            {/* Content Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-green-600 transition-colors">
+                Content <ChevronDown className="ml-1 h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-white shadow-lg border">
+                <DropdownMenuItem asChild>
+                  <Link to="/news/blogs" className="w-full">Blogs</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/gallery" className="w-full">Gallery</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/certificates" className="w-full">Certificates</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Training Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-green-600 transition-colors">
+                Training <ChevronDown className="ml-1 h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-white shadow-lg border">
+                <DropdownMenuItem asChild>
+                  <Link to="/news/training" className="w-full">Courses</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/news/events" className="w-full">Events</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <Link
+              to="/store"
+              className={`text-gray-700 hover:text-green-600 transition-colors ${
+                location.pathname === '/store' ? 'text-green-600 font-semibold' : ''
+              }`}
+            >
+              Store
+            </Link>
+            <Link
+              to="/contact"
+              className={`text-gray-700 hover:text-green-600 transition-colors ${
+                location.pathname === '/contact' ? 'text-green-600 font-semibold' : ''
+              }`}
+            >
+              Contact
+            </Link>
           </nav>
 
           {/* Auth Section */}
@@ -94,18 +161,97 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-gray-200">
             <nav className="flex flex-col space-y-4 mt-4">
-              {navItems.map((item) => (
+              <Link
+                to="/"
+                className={`text-gray-700 hover:text-green-600 transition-colors ${
+                  location.pathname === '/' ? 'text-green-600 font-semibold' : ''
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                to="/about"
+                className={`text-gray-700 hover:text-green-600 transition-colors ${
+                  location.pathname === '/about' ? 'text-green-600 font-semibold' : ''
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </Link>
+              <Link
+                to="/services"
+                className={`text-gray-700 hover:text-green-600 transition-colors ${
+                  location.pathname === '/services' ? 'text-green-600 font-semibold' : ''
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Services
+              </Link>
+
+              {/* Mobile Content Submenu */}
+              <div className="pl-4 space-y-2">
+                <p className="text-gray-500 text-sm font-medium">Content</p>
                 <Link
-                  key={item.name}
-                  to={item.path}
-                  className={`text-gray-700 hover:text-green-600 transition-colors ${
-                    location.pathname === item.path ? 'text-green-600 font-semibold' : ''
-                  }`}
+                  to="/news/blogs"
+                  className="text-gray-700 hover:text-green-600 transition-colors block"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {item.name}
+                  Blogs
                 </Link>
-              ))}
+                <Link
+                  to="/gallery"
+                  className="text-gray-700 hover:text-green-600 transition-colors block"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Gallery
+                </Link>
+                <Link
+                  to="/certificates"
+                  className="text-gray-700 hover:text-green-600 transition-colors block"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Certificates
+                </Link>
+              </div>
+
+              {/* Mobile Training Submenu */}
+              <div className="pl-4 space-y-2">
+                <p className="text-gray-500 text-sm font-medium">Training</p>
+                <Link
+                  to="/news/training"
+                  className="text-gray-700 hover:text-green-600 transition-colors block"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Courses
+                </Link>
+                <Link
+                  to="/news/events"
+                  className="text-gray-700 hover:text-green-600 transition-colors block"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Events
+                </Link>
+              </div>
+
+              <Link
+                to="/store"
+                className={`text-gray-700 hover:text-green-600 transition-colors ${
+                  location.pathname === '/store' ? 'text-green-600 font-semibold' : ''
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Store
+              </Link>
+              <Link
+                to="/contact"
+                className={`text-gray-700 hover:text-green-600 transition-colors ${
+                  location.pathname === '/contact' ? 'text-green-600 font-semibold' : ''
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
               
               {/* Mobile Auth */}
               <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200">

@@ -1,0 +1,35 @@
+
+[
+  {
+    "id": 1,
+    "title": "Collective Procurement",
+    "description": "Bulk purchasing of seeds, fertilizers, and farming equipment at discounted rates for our members.",
+    "icon": "ShoppingCart",
+    "features": ["Bulk discounts", "Quality assurance", "Timely delivery", "Credit facilities"],
+    "benefits": "Save up to 30% on input costs"
+  },
+  {
+    "id": 2,
+    "title": "Market Linkage",
+    "description": "Direct connection between farmers and buyers, ensuring fair prices and reduced middleman costs.",
+    "icon": "TrendingUp",
+    "features": ["Direct buyer access", "Price negotiation", "Quality standards", "Transportation support"],
+    "benefits": "Increase income by 25-40%"
+  },
+  {
+    "id": 3,
+    "title": "Training & Capacity Building",
+    "description": "Regular workshops and training sessions on modern farming techniques and business skills.",
+    "icon": "BookOpen",
+    "features": ["Expert trainers", "Practical sessions", "Certification", "Ongoing support"],
+    "benefits": "Improve productivity by 50%"
+  },
+  {
+    "id": 4,
+    "title": "Financial Services",
+    "description": "Access to credit, insurance, and other financial products tailored for farmers.",
+    "icon": "CreditCard",
+    "features": ["Low interest loans", "Crop insurance", "Savings schemes", "Financial literacy"],
+    "benefits": "Secure financial future"
+  }
+]

@@ -1,0 +1,45 @@
+
+[
+  {
+    "id": 1,
+    "title": "Organic Farming Fundamentals",
+    "description": "Comprehensive course covering all aspects of organic farming practices.",
+    "duration": "4 weeks",
+    "price": 2500,
+    "students": 156,
+    "rating": 4.8,
+    "image": "/placeholder.svg",
+    "instructor": "Dr. Rajesh Kumar",
+    "level": "Beginner",
+    "modules": 12,
+    "certificate": true
+  },
+  {
+    "id": 2,
+    "title": "Digital Marketing for Farm Produce",
+    "description": "Learn to market your farm products online and build your brand.",
+    "duration": "3 weeks",
+    "price": 3200,
+    "students": 89,
+    "rating": 4.6,
+    "image": "/placeholder.svg",
+    "instructor": "Priya Sharma",
+    "level": "Intermediate",
+    "modules": 8,
+    "certificate": true
+  },
+  {
+    "id": 3,
+    "title": "Post-Harvest Technology",
+    "description": "Modern techniques for post-harvest handling and storage.",
+    "duration": "2 weeks",
+    "price": 2000,
+    "students": 124,
+    "rating": 4.7,
+    "image": "/placeholder.svg",
+    "instructor": "Dr. Anita Singh",
+    "level": "Advanced",
+    "modules": 6,
+    "certificate": true
+  }
+]
