@@ -39,12 +39,13 @@ const Events = () => {
       {/* Hero Section */}
       <section className="py-16 bg-green-600 text-white relative overflow-hidden">
         {/* Dark overlay for better text visibility */}
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div style={{
+        {/* <div className="absolute inset-0 bg-black/60"></div> */}
+        <div className="absolute inset-0" style={{
         backgroundImage: 'url(https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)',
         backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }} className="absolute inset-0 bg-green-600"></div>
+        backgroundPosition: 'center',
+        opacity: 0.3
+      }} ></div>
         <div className="container mx-auto px-6 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white drop-shadow-2xl">
             Events & Workshops

@@ -33,8 +33,8 @@ const HeroSection = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                {basicInfo.subtitle}
-                <span className="text-green-200 block">{basicInfo.tagline}</span>
+                Empowering Farmers Through
+                <span className="text-green-200 block">Collective Growth</span>
               </h1>
               <p className="text-lg md:text-xl text-green-100 max-w-lg">
                 Join {basicInfo.businessName} ({basicInfo.shortName}) and transform your farming journey with collective marketing, better prices, and sustainable practices.

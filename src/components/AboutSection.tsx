@@ -2,8 +2,10 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Users, Target, Lightbulb, Handshake } from 'lucide-react';
+import { useBasicInfo } from '@/hooks/useData';
 
 const AboutSection = () => {
+  const { basicInfo, loading } = useBasicInfo();
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-6">
@@ -11,7 +13,7 @@ const AboutSection = () => {
           <div className="space-y-6">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                About Manbhum Farmers Producer Company Limited
+                About {basicInfo.businessName}
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed">
                 A Farmers Producer Company (FPC) is an organization formed by farmers to improve their bargaining power in the market and enhance their income. MFPCL empowers farmers, especially small and marginal ones, through collective farming and business activities.
